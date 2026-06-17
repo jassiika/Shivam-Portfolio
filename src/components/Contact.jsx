@@ -1,28 +1,42 @@
+import { useForm, ValidationError } from '@formspree/react';
+
 const contactLinks = [
   {
     label: "Email",
-    value: "shivam@example.com",
-    href: "mailto:shivam@example.com",
+    value: "shivamsaini28.07.04@gmail.com",
+    href: "mailto:shivamsaini28.07.04@gmail.com",
+  },
+  {
+    label: "Phone",
+    value: "+91 8445177783",
+    href: "tel:+918445177783",
   },
   {
     label: "LinkedIn",
-    value: "Connect professionally",
-    href: "https://www.linkedin.com/",
+    value: "linkedin.com/in/shivamsaini2807",
+    href: "https://linkedin.com/in/shivamsaini2807",
   },
   {
     label: "GitHub",
-    value: "View my code",
-    href: "https://github.com/",
+    value: "github.com/Shivam-2807",
+    href: "https://github.com/Shivam-2807",
+  },
+  {
+    label: "Portfolio",
+    value: "portfolio.auragaint.com",
+    href: "https://portfolio.auragaint.com",
   },
 ];
 
 const availability = [
-  "Frontend projects",
-  "React interfaces",
-  "Portfolio collaborations",
+  "Frontend Development",
+  "Full Stack Roles",
+  "E-Commerce Solutions",
 ];
 
 function Contact() {
+  const [state, handleSubmit] = useForm("mbdeegwb");
+
   return (
     <section id="contact" className="contact-section">
       <div className="contact-shell">
@@ -55,43 +69,55 @@ function Contact() {
             ))}
           </div>
         </div>
-
-        <form className="contact-form">
-          <div className="form-row">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="you@example.com" />
-            </label>
+        {state.succeeded ? (
+          <div className="contact-success">
+            <h3>Thanks for reaching out!</h3>
+            <p>Your message has been sent successfully. I will get back to you as soon as possible.</p>
           </div>
+        ) : (
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-row">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input id="email" type="email" name="email" placeholder="you@example.com" required />
+                <ValidationError prefix="Email" field="email" errors={state.errors} className="field-error" />
+              </label>
+            </div>
 
-          <label>
-            <span>Project type</span>
-            <select name="projectType" defaultValue="">
-              <option value="" disabled>
-                Select a project type
-              </option>
-              <option>Portfolio website</option>
-              <option>Business website</option>
-              <option>React app</option>
-              <option>UI improvement</option>
-            </select>
-          </label>
+            <label>
+              <span>Project type</span>
+              <select name="projectType" defaultValue="">
+                <option value="" disabled>
+                  Select a project type
+                </option>
+                <option>Portfolio website</option>
+                <option>Business website</option>
+                <option>React app</option>
+                <option>UI improvement</option>
+              </select>
+            </label>
 
-          <label>
-            <span>Message</span>
-            <textarea
-              name="message"
-              rows="6"
-              placeholder="Tell me about your idea, timeline, and goals."
-            />
-          </label>
+            <label>
+              <span>Message</span>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Tell me about your idea, timeline, and goals."
+                required
+              />
+              <ValidationError prefix="Message" field="message" errors={state.errors} className="field-error" />
+            </label>
 
-          <button type="submit">Send message</button>
-        </form>
+            <button type="submit" disabled={state.submitting}>
+              {state.submitting ? "Sending..." : "Send message"}
+            </button>
+          </form>
+        )}
       </div>
 
       <style>{`
@@ -192,6 +218,43 @@ function Contact() {
           color: #f8fafc;
           font-size: 0.95rem;
           text-align: right;
+        }
+
+        .contact-success {
+          padding: 40px 30px;
+          border: 1px solid rgba(34, 197, 94, 0.3);
+          border-radius: 8px;
+          background: rgba(255, 255, 255, 0.95);
+          box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+          color: #0f172a;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 350px;
+        }
+
+        .contact-success h3 {
+          font-size: 1.6rem;
+          color: #22c55e;
+          margin: 0 0 12px;
+        }
+
+        .contact-success p {
+          color: #475467;
+          font-size: 1rem;
+          line-height: 1.6;
+          margin: 0;
+          max-width: 320px;
+        }
+
+        .field-error {
+          color: #ef4444;
+          font-size: 0.8rem;
+          font-weight: 700;
+          margin-top: 4px;
+          display: block;
         }
 
         .contact-form {

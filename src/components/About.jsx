@@ -1,14 +1,16 @@
+import { useState } from "react";
+
 const strengths = [
-  "Responsive interfaces",
-  "React component systems",
-  "Clean UI interactions",
-  "Performance focused builds",
+  "Responsive Design",
+  "React.js & PHP Stack",
+  "E-Commerce Solutions",
+  "IT & Tech Operations",
 ];
 
 const metrics = [
-  { value: "15+", label: "UI screens built" },
-  { value: "8+", label: "Projects shipped" },
-  { value: "100%", label: "Frontend focus" },
+  { value: "2+", label: "Years experience" },
+  { value: "3", label: "Major projects" },
+  { value: "2+", label: "Production sites" },
 ];
 
 const highlights = [
@@ -26,22 +28,82 @@ const highlights = [
   },
 ];
 
+const experienceData = [
+  {
+    role: "Web Developer & Technical Operations Executive",
+    company: "Teach To India Publication",
+    location: "Saharanpur, Uttar Pradesh, India",
+    type: "Full-Time - On-Site",
+    period: "Aug 2025 – Present",
+    details: [
+      "Earned promotion from an 11-month internship to a full-time role by delivering strong performance and demonstrating fast learning while managing IT support, digital content, website coordination, and pre-press operations.",
+      "Improved website UI, managed content updates, and enhanced overall user experience across web platforms.",
+      "Delivered technical support and maintained smooth functionality of web systems by resolving issues and ensuring system reliability."
+    ]
+  },
+  {
+    role: "Web Development & Digital Marketing Intern",
+    company: "Panwar Avocado Tech Plc",
+    location: "Saharanpur, Uttar Pradesh, India (Ethiopia – Based Company)",
+    type: "Full-Time - On-Site",
+    period: "Sep 2024 – Aug 2025",
+    details: [
+      "Built and maintained 2 WordPress websites by integrating plugins and implementing responsive design improvements to enhance performance and user experience.",
+      "Created 10+ marketing graphics, supported SEO initiatives, managed 10,000+ Excel records, leveraged AI tools (ChatGPT, Gemini) for content creation, and coordinated a 6-member team to streamline operations."
+    ]
+  }
+];
+
+const educationData = [
+  {
+    degree: "Master of Computer Applications (MCA)",
+    school: "Shobhit University, Gangoh",
+    period: "2025 - 2027",
+    status: "Ongoing"
+  },
+  {
+    degree: "Bachelor of Computer Applications (BCA)",
+    school: "Shobhit University, Gangoh",
+    period: "2022 - 2025",
+    status: "Completed"
+  },
+  {
+    degree: "Senior Secondary Education - CBSE (Class 12)",
+    school: "KLG Public School, Saharanpur",
+    period: "2022",
+    status: "Completed"
+  },
+  {
+    degree: "Secondary Education - CBSE (Class 10)",
+    school: "KLG Public School, Saharanpur",
+    period: "2020",
+    status: "Completed"
+  }
+];
+
+const certificationData = [
+  {
+    title: "Web Application Penetration Testing",
+    provider: "DROP Certified Security Course (DCSC)",
+    date: "MAY-2025",
+    description: "Hands-on security testing focusing on common web application vulnerabilities (OWASP Top 10) and penetration testing methodologies."
+  }
+];
+
 export default function About() {
+  const [activeTab, setActiveTab] = useState("experience");
+
   return (
     <section id="about" className="about-section">
       <div className="about-shell">
         <div className="about-copy">
           <span className="about-kicker">About me</span>
-          <h2>Design-minded frontend developer building clean digital experiences.</h2>
+          <h2>Frontend Developer with a drive for Full Stack capabilities.</h2>
           <p>
-            I am Shivam, a frontend developer focused on creating modern,
-            responsive, and engaging web interfaces. I enjoy shaping ideas into
-            products that feel clear, smooth, and easy to use.
+            I am Shivam Saini, a frontend developer with hands-on experience in building responsive web applications using HTML, CSS, JavaScript, and PHP. I specialize in designing user-focused UI/UX and crafting e-commerce solutions.
           </p>
           <p>
-            My work sits at the intersection of visual design and practical
-            engineering: structured React components, thoughtful spacing,
-            readable code, and small interactions that make a page feel alive.
+            Currently, I am learning React.js to expand my frontend toolkit and pursuing my MCA to grow as a skilled Full Stack Developer. I thrive at resolving technical challenges and making interfaces smooth and intuitive.
           </p>
 
           <div className="about-tags" aria-label="Core strengths">
@@ -55,11 +117,10 @@ export default function About() {
           <div className="about-card profile-card">
             <div>
               <span className="card-label">Current focus</span>
-              <h3>React, 3D web visuals, and portfolio-grade UI</h3>
+              <h3>React.js, Full Stack development, & E-Commerce</h3>
             </div>
             <p>
-              I am refining my frontend craft through interactive projects,
-              stronger design systems, and smoother user experiences.
+              I am expanding my skills in modern Javascript frameworks and backend systems to build complex, scalable web apps.
             </p>
           </div>
 
@@ -82,6 +143,81 @@ export default function About() {
             <p>{item.text}</p>
           </article>
         ))}
+      </div>
+
+      <div className="about-tabs-container">
+        <div className="tab-buttons">
+          <button
+            className={`tab-btn ${activeTab === "experience" ? "active" : ""}`}
+            onClick={() => setActiveTab("experience")}
+          >
+            Experience
+          </button>
+          <button
+            className={`tab-btn ${activeTab === "education" ? "active" : ""}`}
+            onClick={() => setActiveTab("education")}
+          >
+            Education
+          </button>
+          <button
+            className={`tab-btn ${activeTab === "certifications" ? "active" : ""}`}
+            onClick={() => setActiveTab("certifications")}
+          >
+            Certifications
+          </button>
+        </div>
+
+        <div className="tab-content">
+          {activeTab === "experience" && (
+            <div className="timeline">
+              {experienceData.map((exp, idx) => (
+                <div className="timeline-item" key={idx}>
+                  <div className="timeline-header">
+                    <div>
+                      <h3>{exp.role}</h3>
+                      <span className="company">{exp.company}</span>
+                      <span className="location-badge">{exp.location} • {exp.type}</span>
+                    </div>
+                    <span className="period">{exp.period}</span>
+                  </div>
+                  <ul className="details-list">
+                    {exp.details.map((detail, dIdx) => (
+                      <li key={dIdx}>{detail}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {activeTab === "education" && (
+            <div className="education-grid">
+              {educationData.map((edu, idx) => (
+                <div className="edu-card" key={idx}>
+                  <div className="edu-badge">{edu.status}</div>
+                  <h3>{edu.degree}</h3>
+                  <p className="school">{edu.school}</p>
+                  <span className="period">{edu.period}</span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {activeTab === "certifications" && (
+            <div className="certs-grid">
+              {certificationData.map((cert, idx) => (
+                <div className="cert-card" key={idx}>
+                  <div className="cert-header">
+                    <h3>{cert.title}</h3>
+                    <span className="period">{cert.date}</span>
+                  </div>
+                  <p className="provider">{cert.provider}</p>
+                  <p className="desc">{cert.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <style>{`
@@ -244,6 +380,247 @@ export default function About() {
           line-height: 1.25;
         }
 
+        .about-tabs-container {
+          max-width: 1180px;
+          margin: 64px auto 0;
+          position: relative;
+          z-index: 1;
+        }
+
+        .tab-buttons {
+          display: flex;
+          gap: 12px;
+          justify-content: center;
+          margin-bottom: 32px;
+          border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+          padding-bottom: 16px;
+        }
+
+        .tab-btn {
+          border: 1px solid transparent;
+          background: transparent;
+          color: #64748b;
+          padding: 10px 20px;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-weight: 800;
+          cursor: pointer;
+          transition: all 180ms ease;
+        }
+
+        .tab-btn:hover {
+          color: #0f172a;
+          background: rgba(15, 23, 42, 0.04);
+        }
+
+        .tab-btn.active {
+          color: #ffffff;
+          background: #0f172a;
+          border-color: #0f172a;
+          box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+        }
+
+        .tab-content {
+          min-height: 250px;
+        }
+
+        /* Timeline / Experience Styles */
+        .timeline {
+          display: grid;
+          gap: 24px;
+          position: relative;
+        }
+
+        .timeline-item {
+          border: 1px solid rgba(15, 23, 42, 0.1);
+          background: rgba(255, 255, 255, 0.82);
+          border-radius: 8px;
+          padding: 24px;
+          box-shadow: 0 16px 48px rgba(15, 23, 42, 0.06);
+          backdrop-filter: blur(18px);
+          transition: transform 180ms ease;
+        }
+
+        .timeline-item:hover {
+          transform: translateY(-2px);
+          border-color: rgba(8, 145, 178, 0.3);
+        }
+
+        .timeline-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 16px;
+          margin-bottom: 16px;
+          border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+          padding-bottom: 14px;
+        }
+
+        .timeline-header h3 {
+          margin: 0 0 6px;
+          font-size: 1.25rem;
+          color: #0f172a;
+          line-height: 1.2;
+        }
+
+        .timeline-header .company {
+          display: block;
+          color: #0891b2;
+          font-weight: 800;
+          font-size: 0.95rem;
+          margin-bottom: 4px;
+        }
+
+        .timeline-header .location-badge {
+          display: inline-block;
+          font-size: 0.82rem;
+          color: #64748b;
+          font-weight: 700;
+        }
+
+        .timeline-header .period {
+          font-size: 0.9rem;
+          font-weight: 900;
+          color: #0f172a;
+          background: rgba(8, 145, 178, 0.1);
+          padding: 6px 12px;
+          border-radius: 6px;
+          white-space: nowrap;
+        }
+
+        .details-list {
+          margin: 0;
+          padding-left: 20px;
+          display: grid;
+          gap: 10px;
+          color: #475467;
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+
+        .details-list li {
+          margin-bottom: 4px;
+        }
+
+        /* Education Styles */
+        .education-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 18px;
+        }
+
+        .edu-card {
+          position: relative;
+          border: 1px solid rgba(15, 23, 42, 0.1);
+          background: rgba(255, 255, 255, 0.82);
+          border-radius: 8px;
+          padding: 24px;
+          box-shadow: 0 16px 48px rgba(15, 23, 42, 0.06);
+          backdrop-filter: blur(18px);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          min-height: 160px;
+          transition: transform 180ms ease;
+        }
+
+        .edu-card:hover {
+          transform: translateY(-2px);
+          border-color: rgba(8, 145, 178, 0.3);
+        }
+
+        .edu-badge {
+          position: absolute;
+          top: 24px;
+          right: 24px;
+          font-size: 0.76rem;
+          font-weight: 900;
+          text-transform: uppercase;
+          background: rgba(34, 197, 94, 0.12);
+          color: #22c55e;
+          padding: 4px 8px;
+          border-radius: 4px;
+        }
+
+        .edu-card h3 {
+          margin: 0 0 8px;
+          font-size: 1.15rem;
+          color: #0f172a;
+          line-height: 1.3;
+          max-width: 80%;
+        }
+
+        .edu-card .school {
+          margin: 0 0 12px;
+          color: #475467;
+          font-size: 0.95rem;
+          font-weight: 700;
+        }
+
+        .edu-card .period {
+          font-size: 0.86rem;
+          font-weight: 800;
+          color: #0891b2;
+        }
+
+        /* Certifications Styles */
+        .certs-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .cert-card {
+          border: 1px solid rgba(15, 23, 42, 0.1);
+          background: rgba(255, 255, 255, 0.82);
+          border-radius: 8px;
+          padding: 24px;
+          box-shadow: 0 16px 48px rgba(15, 23, 42, 0.06);
+          backdrop-filter: blur(18px);
+          transition: transform 180ms ease;
+        }
+
+        .cert-card:hover {
+          transform: translateY(-2px);
+          border-color: rgba(8, 145, 178, 0.3);
+        }
+
+        .cert-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 8px;
+        }
+
+        .cert-header h3 {
+          margin: 0;
+          font-size: 1.25rem;
+          color: #0f172a;
+        }
+
+        .cert-header .period {
+          font-size: 0.86rem;
+          font-weight: 900;
+          background: #0f172a;
+          color: #ffffff;
+          padding: 4px 10px;
+          border-radius: 4px;
+        }
+
+        .cert-card .provider {
+          margin: 0 0 12px;
+          color: #0891b2;
+          font-weight: 800;
+          font-size: 0.95rem;
+        }
+
+        .cert-card .desc {
+          margin: 0;
+          color: #475467;
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+
         @media (max-width: 900px) {
           .about-section {
             padding: 86px 24px;
@@ -256,6 +633,19 @@ export default function About() {
 
           .about-copy h2 {
             line-height: 1.05;
+          }
+
+          .timeline-header {
+            flex-direction: column;
+            gap: 12px;
+          }
+          
+          .timeline-header .period {
+            align-self: flex-start;
+          }
+          
+          .education-grid {
+            grid-template-columns: 1fr;
           }
         }
 

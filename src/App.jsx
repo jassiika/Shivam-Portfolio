@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CharacterMessage from "./components/CharacterMessage";
+import Loader from "./components/Loader";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <>
+      <Loader />
       <CharacterMessage message={message} />
       <Navbar
         setMessage={setMessage}

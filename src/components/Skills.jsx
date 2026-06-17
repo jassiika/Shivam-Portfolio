@@ -3,45 +3,48 @@ import { motion } from "framer-motion";
 const skillGroups = [
   {
     title: "Frontend",
-    description: "Building fast, responsive interfaces with clean component structure.",
+    description: "Building fast, responsive, and cross-browser compatible client interfaces.",
     skills: [
-      { name: "React", level: 92 },
-      { name: "JavaScript", level: 88 },
       { name: "HTML", level: 95 },
       { name: "CSS", level: 90 },
+      { name: "JavaScript", level: 88 },
+      { name: "React.js (Learning)", level: 65 },
     ],
   },
   {
-    title: "Styling",
-    description: "Creating polished layouts, visual systems, and smooth UI details.",
+    title: "Backend & Database",
+    description: "Creating secure server-side logic, custom admin panels, and database systems.",
     skills: [
-      { name: "Tailwind CSS", level: 86 },
-      { name: "Responsive UI", level: 91 },
-      { name: "Animations", level: 82 },
-      { name: "Design Systems", level: 78 },
+      { name: "PHP", level: 85 },
+      { name: "MySQL", level: 82 },
+      { name: "REST APIs", level: 78 },
     ],
   },
   {
-    title: "Tools",
-    description: "Using modern workflows to ship maintainable frontend projects.",
+    title: "Tools & Concepts",
+    description: "Version control, CMS deployment, and modern interface design patterns.",
     skills: [
-      { name: "Git", level: 84 },
-      { name: "Vite", level: 88 },
-      { name: "Three.js", level: 72 },
-      { name: "Deployment", level: 80 },
+      { name: "WordPress", level: 88 },
+      { name: "Git & GitHub", level: 85 },
+      { name: "Responsive Design", level: 92 },
+      { name: "UI/UX Concepts", level: 80 },
     ],
   },
 ];
 
 const tools = [
-  "React",
-  "JavaScript",
+  "HTML",
   "CSS",
-  "Tailwind",
-  "Framer Motion",
-  "Three.js",
-  "Vite",
+  "JavaScript",
+  "React.js",
+  "PHP",
+  "MySQL",
+  "WordPress",
+  "Git",
   "GitHub",
+  "REST APIs",
+  "Responsive Design",
+  "UI/UX",
 ];
 
 const sectionVariants = {

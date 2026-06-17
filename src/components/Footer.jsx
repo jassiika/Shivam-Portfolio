@@ -7,9 +7,9 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
-  { label: "Email", href: "mailto:shivam@example.com" },
+  { label: "GitHub", href: "https://github.com/Shivam-2807" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/shivamsaini2807" },
+  { label: "Email", href: "mailto:shivamsaini28.07.04@gmail.com" },
 ];
 
 function Footer() {
@@ -47,7 +47,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>Designed and built by Shivam</span>
+        <span>Designed and built by Shivam Saini</span>
         <span>© 2026 All rights reserved</span>
       </div>
 

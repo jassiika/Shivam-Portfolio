@@ -2,25 +2,28 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Interactive Portfolio",
-    type: "React + 3D",
-    description: "A personal website with character animation, smooth sections, and responsive UI.",
-    tags: ["React", "Three.js", "Motion"],
-    repo: "https://github.com/",
+    title: "Traveler Record Website",
+    type: "React + Node (Full Stack)",
+    description: "Built a full-stack travel tracking website with map visualization, route tracking, and trip-based expense management.",
+    tags: ["React.js", "Node.js", "Express", "MongoDB"],
+    repo: "https://shivam-2807.github.io/",
+    linkLabel: "View Project",
   },
   {
-    title: "Business Landing Page",
-    type: "UI Design",
-    description: "A clean conversion-focused page with strong hierarchy and mobile-first sections.",
-    tags: ["Layout", "CSS", "Responsive"],
-    repo: "https://github.com/",
+    title: "T-shirt Selling Ecommerce",
+    type: "PHP + MySQL (Full Stack)",
+    description: "Developed a responsive T-shirt e-commerce store with product listings, cart, secure checkout, and a robust admin dashboard.",
+    tags: ["HTML/CSS", "JavaScript", "PHP", "MySQL"],
+    repo: "https://tshirt.auragaint.com",
+    linkLabel: "Live Demo",
   },
   {
-    title: "Frontend Dashboard",
-    type: "Web App",
-    description: "A polished interface for tracking content, metrics, and user actions clearly.",
-    tags: ["Components", "Charts", "UX"],
-    repo: "https://github.com/",
+    title: "Auragaint Projects Store",
+    type: "WooCommerce Website",
+    description: "Built a digital product store with complete inventory management, payment integration, and custom theme layouts.",
+    tags: ["WordPress", "WooCommerce", "UI/UX", "SEO"],
+    repo: "https://auragaint.com",
+    linkLabel: "Live Demo",
   },
 ];
 
@@ -62,7 +65,7 @@ function Projects() {
               ))}
             </div>
             <a className="project-button" href={project.repo} target="_blank" rel="noreferrer">
-              View repository
+              {project.linkLabel || "View repository"}
             </a>
           </motion.article>
         ))}

@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import ThreeScene from "./ThreeScene";
 
 const heroStats = [
-  { value: "React", label: "Core stack" },
-  { value: "3D", label: "Interactive UI" },
-  { value: "Fast", label: "Responsive builds" },
+  { value: "React / PHP", label: "Core stack" },
+  { value: "Responsive", label: "Clean UI/UX" },
+  { value: "Full Stack", label: "Future focus" },
 ];
 
 export default function Hero({ animation }) {
@@ -22,12 +22,11 @@ export default function Hero({ animation }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.12 }}
         >
-          Frontend Developer
+          Frontend Developer | Aspiring Full Stack Developer
         </motion.span>
-        <h1>Hi, I&apos;m Shivam. I build websites that feel alive.</h1>
+        <h1>Hi, I&apos;m Shivam Saini. I build websites that feel alive.</h1>
         <p>
-          Modern React interfaces, smooth animation, responsive layouts, and
-          interactive details that make visitors stay and explore.
+          Creating responsive web interfaces, custom e-commerce applications, and interactive user experiences. Evolving from frontend building blocks to full-stack capabilities.
         </p>
 
         <div className="hero-actions">
@@ -56,21 +55,21 @@ export default function Hero({ animation }) {
           animate={{ y: [0, -14, 0], rotate: [0, 2, 0] }}
           transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          Smooth motion
+          MCA Student
         </motion.div>
         <motion.div
           className="floating-chip chip-two"
           animate={{ y: [0, 16, 0], rotate: [0, -2, 0] }}
           transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
         >
-          Clean UI
+          Problem Solver
         </motion.div>
         <motion.div
           className="floating-chip chip-three"
           animate={{ y: [0, -10, 0], x: [0, 8, 0] }}
           transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
         >
-          Responsive
+          Future Full Stack
         </motion.div>
       </div>
 
