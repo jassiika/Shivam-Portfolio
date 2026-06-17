@@ -57,8 +57,13 @@ The local server will spin up instantly, usually at http://localhost:5173.
 4. Compile for Production
 Bash
 npm run build
-📈 GitHub Insights
-🤝 Connect With Me
+##📈 GitHub Insights
+<p align="left">
+  <img src="https://github-readme-stats.vercel.app/api?username=Shivam-2807&show_icons=true&theme=dark" alt="Shivam's GitHub Stats" height="150" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shivam-2807&layout=compact&theme=dark" alt="Top Languages" height="150" />
+</p>
+
+##🤝 Connect With Me
 GitHub: @Shivam-2807
 
 LinkedIn: Shivam Saini
