@@ -1,16 +1,64 @@
-# React + Vite
+# 💻 Shivam's Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio repository! This is a fast, highly-optimized single-page application built using the modern Vite and React ecosystem. It serves as a central hub to showcase my software development journey, core technical skills, and professional projects.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Overview
 
-## React Compiler
+This portfolio highlights my transition from building web solutions to engineering scalable frontend and system architectures. It features an interactive user interface, modular component design, and an integrated backend data flow.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✨ Key Features
+- **Dynamic Loader:** A custom, animated entry loader for smooth initial page transitions.
+- **Interactive Experience Timeline:** A structured layout showcasing my professional milestones and career growth.
+- **Connected Contact Form:** A fully operational communication panel integrated with a database to safely log inquiries.
+- **Fluid UI Animations:** Modern, responsive micro-interactions for an engaging user experience.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+- **Frontend & Tooling:** React, JavaScript (ES6+), Vite, HTML5, CSS3
+- **Core Web & Backend Expertise:** WordPress, PHP
+- **DevOps & Infrastructure (Learning/Exploring):** Git, Docker, AWS
+- **Code Quality:** ESLint (`eslint.config.js`)
+
+---
+
+## 📁 Project Structure
+
+Following the standard Vite build pipeline, the codebase is structured as follows:
+
+```bash
+├── public/          # Static assets (images, icons, logos)
+├── src/             # Application source code (components, layout, styles, logic)
+├── .gitignore       # Version control exclusions
+├── eslint.config.js # Code quality and linter rules
+├── index.html       # Application DOM entry point
+├── package.json     # Project dependencies and npm scripts
+├── vite.config.js   # Vite compilation and bundling settings
+└── README.md        # Project documentation
+
+⚡ Getting Started
+To get a local copy of this project up and running for development, follow these steps:
+
+1. Clone the Repository
+git clone https://github.com/Shivam-2807/Shivam-Portfolio.git
+cd Shivam-Portfolio
+
+2. Install Dependencies
+npm install
+
+3. Launch the Local Development Server
+npm run dev
+
+The local server will spin up instantly, usually at http://localhost:5173.
+
+4. Compile for Production
+Bash
+npm run build
+📈 GitHub Insights
+🤝 Connect With Me
+GitHub: @Shivam-2807
+
+LinkedIn: Shivam Saini
