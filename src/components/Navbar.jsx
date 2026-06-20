@@ -220,7 +220,7 @@ function Navbar({ setMessage, setAnimation }) {
         .menu-toggle {
           position: relative;
           z-index: 1;
-          display: none;
+          display: grid;
           width: 42px;
           height: 42px;
           border: 1px solid rgba(255, 255, 255, 0.16);
@@ -295,7 +295,7 @@ function Navbar({ setMessage, setAnimation }) {
           }
 
           .menu-toggle {
-            display: block;
+            display: grid;
           }
         }
       `}</style>
