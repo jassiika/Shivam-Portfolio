@@ -262,7 +262,6 @@ function Navbar({ setMessage, setAnimation }) {
           top: 80px;
           left: 0;
           right: 0;
-          opacity: 1;
           display: grid;
           gap: 8px;
           padding: 12px;
