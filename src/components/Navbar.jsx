@@ -41,7 +41,7 @@ function Navbar({ setMessage, setAnimation }) {
         onMouseEnter={() => showCharacterState("Welcome to my portfolio", "greeting")}
         onMouseLeave={resetCharacterState}
       >
-        Shivam<span>.</span>
+        Shivam TEST <span>.</span>
       </a>
 
       <ul className="navbar-menu desktop-menu">
